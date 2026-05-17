@@ -951,6 +951,85 @@ textarea { resize: vertical; min-height: 120px; }
 /* Submit button margin */
 .contatti-form .btn-full { margin-top: 20px; }
 
+/* Form sections */
+.form-section-title {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .10em;
+    text-transform: uppercase;
+    color: var(--purple);
+    padding: 16px 0 10px;
+    border-top: 1px solid var(--border);
+    margin-top: 8px;
+    margin-bottom: 4px;
+}
+.form-section-title:first-child { border-top: none; padding-top: 0; margin-top: 0; }
+
+.form-optional {
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--text-muted);
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+select {
+    width: 100%;
+    padding: 11px 14px;
+    font-family: inherit;
+    font-size: 15px;
+    color: var(--text-primary);
+    background: var(--bg);
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239CA3AF' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    transition: border-color var(--transition), box-shadow var(--transition);
+}
+select:focus {
+    border-color: var(--purple);
+    box-shadow: 0 0 0 3px rgba(124,58,237,.12);
+}
+select option[value=""] { color: var(--text-muted); }
+optgroup { font-size: 12px; font-weight: 700; color: var(--text-muted); }
+
+/* Checkboxes */
+.form-checks {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 4px;
+}
+.check-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 8px 12px;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    transition: border-color var(--transition), background var(--transition);
+}
+.check-label:hover { border-color: var(--purple); background: rgba(124,58,237,.03); }
+.check-label input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    min-width: 16px;
+    accent-color: var(--purple);
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    box-shadow: none;
+}
+.check-label input[type="checkbox"]:focus { box-shadow: none; }
+
 /* ── Footer ─────────────────────────────────────────────────── */
 .footer {
     background: var(--bg-dark);

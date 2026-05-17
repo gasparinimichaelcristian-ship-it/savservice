@@ -369,8 +369,8 @@
             <div class="contatti-grid reveal">
                 <div class="contatti-info">
                     <div class="section-label">Contatti</div>
-                    <h2>Inizia con una consulenza gratuita</h2>
-                    <p>Raccontaci il tuo progetto. In pochi giorni ti diciamo a quali agevolazioni hai diritto e quanto puoi recuperare.</p>
+                    <h2>Scopri subito a quanto ammonta il tuo beneficio</h2>
+                    <p>Compilando il modulo ci dai le informazioni necessarie per una prima valutazione. Ti ricontattiamo entro 24 ore con una stima concreta.</p>
                     <div class="contact-details">
                         <div class="contact-item">
                             <strong>Indirizzo</strong>
@@ -400,6 +400,8 @@
                 </div>
                 <div class="contatti-form">
                     <form action="https://formspree.io/f/SOSTITUISCI_CON_TUO_ID" method="POST" id="contact-form">
+
+                        <div class="form-section-title">Chi sei</div>
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="nome">Nome *</label>
@@ -410,9 +412,22 @@
                                 <input type="text" id="cognome" name="cognome" required placeholder="Rossi">
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="azienda">Azienda</label>
-                            <input type="text" id="azienda" name="azienda" placeholder="Nome della tua azienda">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="ruolo">Ruolo</label>
+                                <select id="ruolo" name="ruolo">
+                                    <option value="">— Seleziona —</option>
+                                    <option>Imprenditore / Titolare</option>
+                                    <option>Direttore Finanziario / CFO</option>
+                                    <option>Commercialista / Consulente</option>
+                                    <option>Agente / Venditore</option>
+                                    <option>Altro</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="azienda">Azienda</label>
+                                <input type="text" id="azienda" name="azienda" placeholder="Nome della tua azienda">
+                            </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group">
@@ -420,19 +435,118 @@
                                 <input type="email" id="email" name="email" required placeholder="mario@azienda.it">
                             </div>
                             <div class="form-group">
-                                <label for="telefono">Telefono</label>
-                                <input type="tel" id="telefono" name="telefono" placeholder="+39 045 ...">
+                                <label for="telefono">Telefono *</label>
+                                <input type="tel" id="telefono" name="telefono" required placeholder="+39 ...">
+                            </div>
+                        </div>
+
+                        <div class="form-section-title">La tua azienda</div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="regione">Regione sede *</label>
+                                <select id="regione" name="regione" required>
+                                    <option value="">— Seleziona —</option>
+                                    <optgroup label="ZES — Zona Economica Speciale">
+                                        <option>Sardegna</option>
+                                        <option>Sicilia</option>
+                                        <option>Campania</option>
+                                        <option>Puglia</option>
+                                        <option>Calabria</option>
+                                        <option>Basilicata</option>
+                                        <option>Abruzzo</option>
+                                        <option>Molise</option>
+                                    </optgroup>
+                                    <optgroup label="Centro Italia">
+                                        <option>Lazio</option>
+                                        <option>Toscana</option>
+                                        <option>Umbria</option>
+                                        <option>Marche</option>
+                                    </optgroup>
+                                    <optgroup label="Nord Italia">
+                                        <option>Veneto</option>
+                                        <option>Lombardia</option>
+                                        <option>Piemonte</option>
+                                        <option>Emilia-Romagna</option>
+                                        <option>Trentino-Alto Adige</option>
+                                        <option>Friuli-Venezia Giulia</option>
+                                        <option>Liguria</option>
+                                        <option>Valle d'Aosta</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="dimensione">Dimensione azienda</label>
+                                <select id="dimensione" name="dimensione">
+                                    <option value="">— Seleziona —</option>
+                                    <option>Micro (meno di 10 dipendenti)</option>
+                                    <option>Piccola (10–50 dipendenti)</option>
+                                    <option>Media (50–250 dipendenti)</option>
+                                    <option>Grande (oltre 250 dipendenti)</option>
+                                </select>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="messaggio">Messaggio *</label>
-                            <textarea id="messaggio" name="messaggio" required rows="5" placeholder="Descrivi brevemente la tua situazione e cosa vorresti capire..."></textarea>
+                            <label for="settore">Settore / Codice ATECO <span class="form-optional">(facoltativo)</span></label>
+                            <input type="text" id="settore" name="settore" placeholder="Es. Metalmeccanico, Alimentare, Logistica, ATECO 25.62…">
                         </div>
-                        <button type="submit" class="btn btn-primary btn-full">Invia il messaggio</button>
+
+                        <div class="form-section-title">L'investimento</div>
+                        <div class="form-group">
+                            <label>Tipo di investimento <span class="form-optional">(puoi selezionare più voci)</span></label>
+                            <div class="form-checks">
+                                <label class="check-label"><input type="checkbox" name="investimento[]" value="Macchinari e impianti industriali"> Macchinari e impianti industriali</label>
+                                <label class="check-label"><input type="checkbox" name="investimento[]" value="Fotovoltaico e energia rinnovabile"> Fotovoltaico e energia rinnovabile</label>
+                                <label class="check-label"><input type="checkbox" name="investimento[]" value="Software e digitalizzazione"> Software e digitalizzazione</label>
+                                <label class="check-label"><input type="checkbox" name="investimento[]" value="Ricerca e sviluppo"> Ricerca e sviluppo</label>
+                                <label class="check-label"><input type="checkbox" name="investimento[]" value="Altro / non so ancora"> Altro / non so ancora</label>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="stato_inv">Stato dell'investimento</label>
+                                <select id="stato_inv" name="stato_investimento">
+                                    <option value="">— Seleziona —</option>
+                                    <option>Già effettuato (ultimi 12 mesi)</option>
+                                    <option>In corso</option>
+                                    <option>In programma nei prossimi 12 mesi</option>
+                                    <option>Solo esplorativo, nessun piano definito</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="importo">Importo approssimativo</label>
+                                <select id="importo" name="importo">
+                                    <option value="">— Seleziona —</option>
+                                    <option>Meno di €100.000</option>
+                                    <option>€100.000 – €500.000</option>
+                                    <option>€500.000 – €1.000.000</option>
+                                    <option>Oltre €1.000.000</option>
+                                    <option>Non so ancora</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-section-title">Messaggio</div>
+                        <div class="form-group">
+                            <label for="messaggio">Descrivi la tua situazione <span class="form-optional">(facoltativo)</span></label>
+                            <textarea id="messaggio" name="messaggio" rows="4" placeholder="Aggiungi dettagli che ritieni utili: progetti specifici, scadenze, dubbi…"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="come_conosciuto">Come ci hai conosciuto</label>
+                            <select id="come_conosciuto" name="come_conosciuto">
+                                <option value="">— Seleziona —</option>
+                                <option>Convegno o evento</option>
+                                <option>Passaparola</option>
+                                <option>Ricerca su Google</option>
+                                <option>Social media</option>
+                                <option>Altro</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full">Invia la richiesta</button>
                         <div class="form-success" id="form-success" aria-live="polite">
-                            Grazie! Il tuo messaggio è stato inviato. Ti risponderemo al più presto.
+                            Grazie! Abbiamo ricevuto la tua richiesta. Ti ricontattiamo entro 24 ore.
                         </div>
-                        <p class="form-note">I tuoi dati sono trattati secondo la nostra <a href="#">privacy policy</a>.</p>
+                        <p class="form-note">I tuoi dati sono trattati secondo la nostra <a href="privacy.html">privacy policy</a>.</p>
                     </form>
                 </div>
             </div>
